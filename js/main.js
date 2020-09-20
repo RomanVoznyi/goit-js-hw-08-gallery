@@ -43,12 +43,12 @@ function closeModal({ type, key }) {
 		lightboxImage.src = "";
 		lightboxImage.alt = "";
 		lightboxImage.dataset.index = "";
+		window.removeEventListener("keyup", closeModal);
 	}
 
 	if (type === "keyup") {
 		if (key === "Escape") {
 			clearModal();
-			window.removeEventListener("keyup", closeModal);
 		}
 	} else {
 		clearModal();
